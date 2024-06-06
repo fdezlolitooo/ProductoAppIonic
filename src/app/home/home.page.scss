@@ -1,0 +1,64 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.action-button {
+  flex: 1;
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between; /* Para alinear las tarjetas horizontalmente */
+  width: 100%;
+  max-width: 600px; /* Ajustar el ancho máximo */
+  margin-top: 20px; /* Espacio entre los botones y las tarjetas */
+}
+
+.info-section ion-card {
+  width: 48%; /* Ancho de cada tarjeta */
+}
+
+.info-section ion-card:last-child {
+  margin-left: 4%; /* Espacio entre las tarjetas */
+}
+
+.info-section ion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

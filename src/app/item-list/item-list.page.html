@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Ítems</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="Atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="filter-label">Filtrar por:</ion-label>
+    <ion-select [(ngModel)]="filterCriteria" (ionChange)="onFilterChange()">
+      <ion-select-option value="">Ninguno</ion-select-option>
+      <ion-select-option value="unidad">Unidad</ion-select-option>
+      <ion-select-option value="producto">Producto</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="filter-label">Valor:</ion-label>
+    <ion-input [(ngModel)]="filterValue" (ionInput)="onFilterChange()"></ion-input>
+  </ion-item>
+ 
+  <ion-button expand="full" (click)="addItem()" color="primary">Agregar Ítem</ion-button>
+<hr>
+  <ion-list>
+    <ion-item *ngFor="let item of items; let i = index" class="item-container">
+      <ion-label class="item-text">
+        <h2>Producto:{{ item.producto }}</h2>
+        <p>Presupuesto: {{ item.presupuesto }}</p>
+        <p>Unidad: {{ item.unidad }}</p>
+        <p>Cantidad: {{ item.cantidad }}</p>
+        <p>Valor Unitario: {{ item.valorUnitario }}</p>
+        <p>Valor Total: {{ item.valorTotal }}</p>
+        <p>Fecha Adquisición: {{ item.fechaAdquisicion | date }}</p>
+        <p>Proveedor: {{ item.proveedor }}</p>
+      </ion-label>
+      <ion-button (click)="editItem(i)" color="secondary">Editar</ion-button>
+      <ion-button (click)="deleteItem(i)" color="danger">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

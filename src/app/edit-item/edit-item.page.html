@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Ítem</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="Atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="editItemForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Presupuesto</ion-label>
+      <ion-input formControlName="presupuesto" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Unidad</ion-label>
+      <ion-input formControlName="unidad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Producto</ion-label>
+      <ion-input formControlName="producto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input formControlName="cantidad" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor Unitario</ion-label>
+      <ion-input formControlName="valorUnitario" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor Total</ion-label>
+      <ion-input formControlName="valorTotal" type="number" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha de Adquisición</ion-label>
+      <ion-datetime formControlName="fechaAdquisicion" display-format="YYYY-MM-DD" min="2022" max="2025"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Proveedor</ion-label>
+      <ion-input formControlName="proveedor"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" color="primary" [disabled]="!editItemForm.valid">Guardar Cambios</ion-button>
+  </form>
+</ion-content>

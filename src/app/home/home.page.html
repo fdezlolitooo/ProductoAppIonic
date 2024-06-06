@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="home-container">
+    <div class="welcome-section">
+      <h1>Bienvenido a la Gestión de Ítems</h1>
+      <p>Esta aplicación te permite gestionar los ítems de tu inventario de manera fácil y eficiente.</p>
+    </div>
+    <img src="assets/img/bienvenido.jpg" alt="Welcome" class="welcome-image"/>
+    <div class="button-group">
+      <ion-button color="secondary" class="action-button" (click)="navigateToItemList()">
+        <ion-icon slot="start" name="list-outline"></ion-icon>
+        Ver Lista de Ítems
+      </ion-button>
+      <ion-button color="secondary" class="action-button" (click)="navigateToAddItem()">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Agregar Ítem
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
